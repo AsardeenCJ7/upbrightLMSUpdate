@@ -97,8 +97,6 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                         </div>
                     </div>
 
-
-
                     <span class="signin-box-move-desktop-helper"></span>
                     <div class="sign-in-box btn-group d-none">
 

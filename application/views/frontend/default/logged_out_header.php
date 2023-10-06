@@ -1,22 +1,27 @@
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.sign-in-box .btn{
-
-  font-family: 'Poppins', sans-serif !important;
-  font-size: 14px !important;
- text-transform: uppercase;
- color:black !important;
- font-weight: 600 !important;
- letter-spacing: 2px !important;
-
-
+body {
+    margin: 0;  /* Ensure no default margin on body */
 }
 
+.menu-area {
+    position: sticky;
+    top: 0;  /* Stick to the top of the viewport */
+   background:#f8f9fa !important;  /* Ensure it appears above other elements */
+}
 
+/* Add other styles as needed */
+
+.sign-in-box .btn {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    color: black !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
+}
 </style>
-
 
 <section class="menu-area">
   <div class="container-xl">
@@ -29,7 +34,7 @@
             <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
           </ul>
 
-          <a href="<?php echo site_url(''); ?>" class="navbar-brand" href="#"><img src="<?php echo base_url('uploads/system/'.get_frontend_settings('dark_logo')); ?>" alt="" height="35"></a>
+          <a href="<?php echo site_url(''); ?>" class="navbar-brand" href="#"><img src="<?php echo base_url('uploads/system/'.get_frontend_settings('dark_logo')); ?>" alt="" height="40"></a>
 
           <?php include 'menu.php'; ?>
 

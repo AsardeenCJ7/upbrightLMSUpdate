@@ -1253,5 +1253,6 @@
     "this_instructor_has_not_provided_valid_paypal_client_id": "This instructor has not provided valid paypal client id",
     "this_instructor_has_not_provided_valid_public_key_or_secret_key": "This instructor has not provided valid public key or secret key",
     "applicant": "Applicant",
-    "it_looks_like_you_are_skipping_a_version": "It looks like you are skipping a version"
+    "it_looks_like_you_are_skipping_a_version": "It looks like you are skipping a version",
+    "invalid_lesson_url_and_duration": "Invalid lesson url and duration"
 }

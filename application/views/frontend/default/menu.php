@@ -1,3 +1,7 @@
+<style>
+
+</style>
+
 <div class="main-nav-wrap">
   <div class="mobile-overlay"></div>
 
@@ -5,8 +9,12 @@
     <div class="mobile-menu-helper-top"></div>
 
     <li class="has-children">
-      <a href="">
-        <i class="fas fa-th d-inline"></i>
+      <a href="" style="font-family: 'Poppins';
+    font-weight: 550;
+    text-transform: uppercase; 
+    color:black;
+    letter-spacing:1px;">
+        <i class="fas fa-th d-inline" style = "color:#24c05d !important;"></i>
         <span><?php echo site_phrase('courses'); ?></span>
         <span class="has-sub-category"><i class="fas fa-angle-right"></i></span>
       </a>
@@ -40,7 +48,7 @@
   <?php endforeach; ?>
   <li class="all-category-devided mb-0 p-0">
     <a href="<?php echo site_url('home/courses'); ?>" class="py-3">
-      <span class="icon"><i class="fa fa-align-justify"></i></span>
+      <span class="icon"><i class="fa fa-align-justify" style="color:black;"></i></span>
       <span><?php echo site_phrase('all_courses'); ?></span>
     </a>
   </li>
