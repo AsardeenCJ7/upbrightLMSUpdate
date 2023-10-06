@@ -62,7 +62,7 @@ body {
           <span class="signin-box-move-desktop-helper"></span>
           <div class="sign-in-box btn-group">
             <!--Here gen class to use css purpose-->
-          <a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent;"><?php echo site_phrase('About_Usgit '); ?></a>
+          <a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent;"><?php echo site_phrase('About_Us'); ?></a>
           <a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent;"><?php echo site_phrase('Contact'); ?></a>
             <a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in"><?php echo site_phrase('log_in'); ?></a>
 
