@@ -1,4 +1,27 @@
-<div class="col-lg-9  order-md-1 course_col" id = "video_player_area">
+<style>
+    #customControls {
+        padding:10px;
+        display: table;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #rewindButton,
+    #playPauseButton {
+        background-color: #4CAF50 !important;
+        color: #fff;
+        border: 1px solid #4CAF50 !important;
+        border-radius: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+        margin-right: 8px; 
+    }
+    #rewindButton:hover,
+    #playPauseButton:hover {
+        background-color: #e8f5e9 !important;
+        border-color: #e8f5e9 !important;
+    }
+</style>
+<div class="col-lg-9  order-md-1 course_col" id="video_player_area">
     <!-- <div class="" style="background-color: #333;"> -->
     <div class="" style="text-align: center;">
         <?php
@@ -12,117 +35,172 @@
             $provider = $lesson_details['video_type'];
             ?>
 
-            <!-- If the video is youtube video -->
-            <?php if (strtolower($provider) == 'youtube'): ?>
-                <!------------- PLYR.IO ------------>
-                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
+        <!-- If the video is youtube video -->
+        <?php if (strtolower($provider) == 'youtube'): ?>
+        <!------------- PLYR.IO ------------>
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
 
-                <div class="plyr__video-embed" id="player">
-                    <iframe height="500" src="<?php echo $video_url;?>?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
-                </div>
+        <div class="plyr__video-embed" id="player">
+            <iframe height="500"
+                src="<?php echo $video_url;?>?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                allowfullscreen allowtransparency allow="autoplay"></iframe>
+        </div>
 
-                <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
-                <!------------- PLYR.IO ------------>
+        <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
+        <script>
+        const player = new Plyr('#player');
+        </script>
+        <!------------- PLYR.IO ------------>
 
-                <!-- If the video is vimeo video -->
-            <?php elseif (strtolower($provider) == 'vimeo'):
+        <!-- If the video is vimeo video -->
+        <?php elseif (strtolower($provider) == 'vimeo'):
                 $video_details = $this->video_model->getVideoDetails($video_url);
                 $video_id = $video_details['video_id'];?>
-                <!------------- PLYR.IO ------------>
-                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
-                <div class="plyr__video-embed" id="player">
-                    <iframe height="500" src="https://player.vimeo.com/video/<?php echo $video_id; ?>?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media" allowfullscreen allowtransparency allow="autoplay"></iframe>
-                </div>
+        <!------------- PLYR.IO ------------>
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
+        <div class="plyr__video-embed" id="player">
+            <iframe height="500"
+                src="https://player.vimeo.com/video/<?php echo $video_id; ?>?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+                allowfullscreen allowtransparency allow="autoplay"></iframe>
+        </div>
 
-                <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
-                <!------------- PLYR.IO ------------>
+        <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
+        <script>
+        const player = new Plyr('#player');
+        </script>
+        <!------------- PLYR.IO ------------>
 
-                <!-- If the video is Amazon S3 video -->
-            <?php elseif (strtolower($provider) == 'amazon'):?>
-                <!------------- PLYR.IO ------------>
-                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
-                <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
-                    <?php if (get_video_extension($video_url) == 'mp4'): ?>
-                        <source src="<?php echo $video_url; ?>" type="video/mp4">
-                    <?php elseif (get_video_extension($video_url) == 'webm'): ?>
-                        <source src="<?php echo $video_url; ?>" type="video/webm">
-                    <?php else: ?>
-                        <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
-                    <?php endif; ?>
-                </video>
-
-                <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
-                <!------------- PLYR.IO ------------>
-                <!-- If the video is Amazon S3 video -->
-
-                <!-- If the video is self uploaded video -->
-            <?php elseif (strtolower($provider) == 'system'):?>
-                <!------------- PLYR.IO ------------>
-                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
-                <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
-                    <?php if (get_video_extension($video_url) == 'mp4'): ?>
-                        <source src="<?php echo $video_url; ?>" type="video/mp4">
-                    <?php elseif (get_video_extension($video_url) == 'webm'): ?>
-                        <source src="<?php echo $video_url; ?>" type="video/webm">
-                    <?php else: ?>
-                        <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
-                    <?php endif; ?>
-                </video>
-
-                <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
-                <!------------- PLYR.IO ------------>
-                <!-- If the video is self uploaded video -->
-
-            <?php else :?>
-                <!------------- PLYR.IO ------------>
-                <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
-                <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
-                    <?php if (get_video_extension($video_url) == 'mp4'): ?>
-                        <source src="<?php echo $video_url; ?>" type="video/mp4">
-                    <?php elseif (get_video_extension($video_url) == 'webm'): ?>
-                        <source src="<?php echo $video_url; ?>" type="video/webm">
-                    <?php else: ?>
-                        <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
-                    <?php endif; ?>
-                </video>
-
-                <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
-                <script>const player = new Plyr('#player');</script>
-                <!------------- PLYR.IO ------------>
-            <?php endif; ?>
-        <?php elseif ($lesson_details['lesson_type'] == 'quiz'): ?>
-            <div class="mt-5">
-                <?php include 'quiz_view.php'; ?>
-            </div>
-        <?php else: ?>
-            <?php if ($lesson_details['attachment_type'] == 'iframe'): ?>
-                <div class="mt-5">
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="<?php echo $lesson_details['attachment']; ?>" allowfullscreen></iframe>
-                    </div>
-                </div>
+        <!-- If the video is Amazon S3 video -->
+        <?php elseif (strtolower($provider) == 'amazon'):?>
+        <!------------- PLYR.IO ------------>
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
+        <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
+            <?php if (get_video_extension($video_url) == 'mp4'): ?>
+            <source src="<?php echo $video_url; ?>" type="video/mp4">
+            <?php elseif (get_video_extension($video_url) == 'webm'): ?>
+            <source src="<?php echo $video_url; ?>" type="video/webm">
             <?php else: ?>
-                <div class="mt-5">
-                    <a href="<?php echo base_url().'uploads/lesson_files/'.$lesson_details['attachment']; ?>" class="btn btn-sign-up" download style="color: #fff;">
-                        <i class="fa fa-download" style="font-size: 20px;"></i> <?php echo get_phrase('download').' '.$lesson_details['title']; ?>
-                    </a>
-                </div>
+            <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
             <?php endif; ?>
+        </video>
+
+        <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
+        <script>
+        const player = new Plyr('#player');
+        </script>
+        <!------------- PLYR.IO ------------>
+        <!-- If the video is Amazon S3 video -->
+
+        <!-- If the video is self uploaded video -->
+        <?php elseif (strtolower($provider) == 'system'):?>
+        <!------------- PLYR.IO ------------>
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
+        <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
+            <?php if (get_video_extension($video_url) == 'mp4'): ?>
+            <source src="<?php echo $video_url; ?>" type="video/mp4">
+            <?php elseif (get_video_extension($video_url) == 'webm'): ?>
+            <source src="<?php echo $video_url; ?>" type="video/webm">
+            <?php else: ?>
+            <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
+            <?php endif; ?>
+        </video>
+
+        <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
+        <script>
+        const player = new Plyr('#player');
+        </script>
+        <!------------- PLYR.IO ------------>
+        <!-- If the video is self uploaded video -->
+
+        <?php else :?>
+        <!------------- PLYR.IO ------------>
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/global/plyr/plyr.css">
+        <video poster="<?php echo $lesson_thumbnail_url;?>" id="player" playsinline controls>
+            <?php if (get_video_extension($video_url) == 'mp4'): ?>
+            <source src="<?php echo $video_url; ?>" type="video/mp4">
+            <?php elseif (get_video_extension($video_url) == 'webm'): ?>
+            <source src="<?php echo $video_url; ?>" type="video/webm">
+            <?php else: ?>
+            <h4><?php get_phrase('video_url_is_not_supported'); ?></h4>
+            <?php endif; ?>
+        </video>
+        <!--Buttons Add Code -->
+        <div id="customControls">
+            <button id="rewindButton" aria-label="Rewind">
+                <div class="icon-wrapper">
+                    <i class="fas fa-undo"></i> <!-- Replace with your rewind icon -->
+                </div>
+            </button>           
+            <button id="playPauseButton" aria-label="Play/Pause">
+                <div class="icon-wrapper">
+                    <i class="fas fa-play"></i> <!-- Replace with your play icon -->
+                    <i class="fas fa-pause"></i> <!-- Replace with your pause icon -->
+                </div>
+            </button>                    
+        </div>
+        <script src="<?php echo base_url();?>assets/global/plyr/plyr.js"></script>
+        <!-- vplayer -->
+        <script>
+            const video = document.getElementById('player');
+            const playPauseButton = document.getElementById('playPauseButton');
+            const rewindButton = document.getElementById('rewindButton');
+            // Remove default video controls
+            video.removeAttribute('controls');
+            // Play/Pause button click handler
+            playPauseButton.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            });
+            // Rewind button click handler
+            rewindButton.addEventListener('click', () => {
+            video.currentTime -= 10; // Rewind by 10 seconds
+            });
+        </script>
+        <!-- end vplayer -->
+        <!--  -->
+        <script>
+        const player = new Plyr('#player');
+        </script>
+        <!------------- PLYR.IO ------------>
+        <?php endif; ?>
+        <?php elseif ($lesson_details['lesson_type'] == 'quiz'): ?>
+        <div class="mt-5">
+            <?php include 'quiz_view.php'; ?>
+        </div>
+        <?php else: ?>
+        <?php if ($lesson_details['attachment_type'] == 'iframe'): ?>
+        <div class="mt-5">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="<?php echo $lesson_details['attachment']; ?>"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <?php else: ?>
+        <div class="mt-5">
+            <a href="<?php echo base_url().'uploads/lesson_files/'.$lesson_details['attachment']; ?>"
+                class="btn btn-sign-up" download style="color: #fff;">
+                <i class="fa fa-download" style="font-size: 20px;"></i>
+                <?php echo get_phrase('download').' '.$lesson_details['title']; ?>
+            </a>
+        </div>
+        <?php endif; ?>
         <?php endif; ?>
     </div>
-
-    <div class="" style="margin: 20px 0;" id = "lesson-summary">
+    <div class="" style="margin: 20px 0;" id="lesson-summary">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $lesson_details['lesson_type'] == 'quiz' ? get_phrase('instruction') : get_phrase("note"); ?>:</h5>
+                <h5 class="card-title">
+                    <?php echo $lesson_details['lesson_type'] == 'quiz' ? get_phrase('instruction') : get_phrase("note"); ?>:
+                </h5>
                 <?php if ($lesson_details['summary'] == ""): ?>
-                    <p class="card-text"><?php echo $lesson_details['lesson_type'] == 'quiz' ? get_phrase('no_instruction_found') : get_phrase("no_summary_found"); ?></p>
+                <p class="card-text">
+                    <?php echo $lesson_details['lesson_type'] == 'quiz' ? get_phrase('no_instruction_found') : get_phrase("no_summary_found"); ?>
+                </p>
                 <?php else: ?>
-                    <p class="card-text"><?php echo $lesson_details['summary']; ?></p>
+                <p class="card-text"><?php echo $lesson_details['summary']; ?></p>
                 <?php endif; ?>
             </div>
         </div>

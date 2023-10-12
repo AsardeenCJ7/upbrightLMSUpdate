@@ -1,3 +1,17 @@
+<style>
+        .content-update-box >.btn{
+        background: #0abf53 !important;
+        color: white !important;
+    }
+
+    .content-update-box >.btn:hover{
+        background: green !important;
+        color: #fff !important;
+    }
+</style>
+
+
+
 <?php if(get_frontend_settings('recaptcha_status')): ?>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php endif; ?>
@@ -82,16 +96,12 @@
                                       <input type="text" class="form-control" name = "last_name" id="last_name" placeholder="<?php echo site_phrase('last_name'); ?>" value="" required>
                                   </div>
 
-
-
                                    <!-- certificate name insert -->
                                   <div class="form-group">
                                     <label for="certificate_name" class="certificate-label">
                                     <i class="fas fa-certificate"></i> <?php echo site_phrase('certificate_printed_name'); ?>: </label>
                                     <input type="text" class="form-control" name="certificate_name" id="certificate_name" placeholder="<?php echo site_phrase('certificate_printed_name'); ?>" required>
                                   </div>
-
-
 
                                   <div class="form-group">
                                       <label for="registration-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
@@ -101,11 +111,13 @@
                                       <label for="registration-password"><span class="input-field-icon"><i class="fas fa-lock"></i></span> <?php echo site_phrase('password'); ?>:</label>
                                       <input type="password" class="form-control" name = "password" id="registration-password" placeholder="<?php echo site_phrase('password'); ?>" value="" required>
                                   </div>
-                                  <?php if(get_frontend_settings('recaptcha_status')): ?>
+
+                                  <!--Recaptcha comment-->
+                                  <!-- <?php if(get_frontend_settings('recaptcha_status')): ?>
                                     <div class="form-group">
                                       <div class="g-recaptcha" data-sitekey="<?php echo get_frontend_settings('recaptcha_sitekey'); ?>"></div>
                                     </div>
-                                  <?php endif; ?>
+                                  <?php endif; ?> -->
                               </div>
                           </div>
                           <div class="content-update-box">

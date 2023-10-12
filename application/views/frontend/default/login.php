@@ -1,3 +1,16 @@
+<style>
+    .content-update-box >.btn{
+        background: #0abf53 !important;
+        color: #fff !important;
+    }
+
+    .content-update-box >.btn:hover{
+        background: green !important;
+        color: #fff !important;
+    }
+</style>
+
+
 <?php if(get_frontend_settings('recaptcha_status')): ?>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php endif; ?>
@@ -79,6 +92,12 @@
                                       <label for="last_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> <?php echo site_phrase('last_name'); ?>:</label>
                                       <input type="text" class="form-control" name = "last_name" id="last_name" placeholder="<?php echo site_phrase('last_name'); ?>" value="" required>
                                   </div>
+
+                                  <div class="form-group">
+                                      <label for="last_name"><span class="input-field-icon"><i class="fas fa-user"></i></span> <?php echo site_phrase('Certificate_name'); ?>:</label>
+                                      <input type="text" class="form-control" name = "certificate_name" id="last_name" placeholder="<?php echo site_phrase('Certificate_name'); ?>" value="" required>
+                                  </div>
+
                                   <div class="form-group">
                                       <label for="registration-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo site_phrase('email'); ?>:</label>
                                       <input type="email" class="form-control" name = "email" id="registration-email" placeholder="<?php echo site_phrase('email'); ?>" value="" required>
