@@ -2,11 +2,11 @@
 $user_details = $this->user_model->get_user($this->session->userdata('user_id'))->row_array();
 ?>
 <style>
-.menu-area {
-    position: sticky;
-    top: 0;
-    background: #f8f9fa !important;
-}
+    .menu-area {
+        position: sticky;
+        top: 0;
+        background: #f8f9fa !important;
+    }
 </style>
 <section class="menu-area">
     <div class="container-xl">
@@ -20,8 +20,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                     </ul>
 
                     <a href="<?php echo site_url(''); ?>" class="navbar-brand" href="#">
-                        <img src="<?php echo base_url('uploads/system/' . get_frontend_settings('dark_logo')); ?>"
-                            alt="" height="35">
+                        <img src="<?php echo base_url('uploads/system/' . get_frontend_settings('dark_logo')); ?>" alt="" height="35">
                     </a>
 
                     <?php include 'menu.php'; ?>
@@ -29,48 +28,42 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
 
                     <form class="inline-form" action="<?php echo site_url('home/search'); ?>" method="get">
                         <div class="input-group search-box mobile-search">
-                            <input type="text" name='query' class="form-control"
-                                placeholder="<?php echo site_phrase('search_for_courses'); ?>">
+                            <input type="text" name='query' class="form-control" placeholder="<?php echo site_phrase('search_for_courses'); ?>">
                             <div class="input-group-append">
                                 <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </form>
-                    
+
                     <div class="instructor-box">
                         <div class="icon">
-                            <a href="https://upbright.lk/about"
-                                style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('About'); ?></a>
+                            <a href="https://upbright.lk/about" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('About'); ?></a>
                         </div>
                     </div>
-                    
-                     <div class="instructor-box">
-                        <div class="icon">
-                            <a href="https://shop.upbright.lk/blog"
-                                style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('Blog'); ?></a>
-                        </div>
-                    </div>
- 
+
                     <div class="instructor-box">
                         <div class="icon">
-                            <a href="https://upbright.lk/contact"
-                                style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('Contact'); ?></a>
+                            <a href="https://shop.upbright.lk/blog" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('Blog'); ?></a>
+                        </div>
+                    </div>
+
+                    <div class="instructor-box">
+                        <div class="icon">
+                            <a href="https://upbright.lk/contact" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('Contact'); ?></a>
                         </div>
                     </div>
 
                     <?php if (get_settings('allow_instructor') == 1) : ?>
-                    <div class="instructor-box menu-icon-box">
-                        <div class="icon">
-                            <a href="<?php echo site_url('user'); ?>"
-                                style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0;"><?php echo site_phrase('instructor'); ?></a>
+                        <div class="instructor-box menu-icon-box">
+                            <div class="icon">
+                                <a href="<?php echo site_url('user'); ?>" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0;"><?php echo site_phrase('instructor'); ?></a>
+                            </div>
                         </div>
-                    </div>
                     <?php endif; ?>
 
                     <div class="instructor-box menu-icon-box">
                         <div class="icon">
-                            <a href="<?php echo site_url('home/my_courses'); ?>"
-                                style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px;"><?php echo site_phrase('my_courses'); ?></a>
+                            <a href="<?php echo site_url('home/my_courses'); ?>" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px;"><?php echo site_phrase('my_courses'); ?></a>
                         </div>
                     </div>
 
@@ -89,8 +82,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                     <div class=" user-box menu-icon-box">
                         <div class="icon">
                             <a href="javascript::">
-                                <img src="<?php echo $this->user_model->get_user_image_url($this->session->userdata('user_id')); ?>"
-                                    alt="" class="img-fluid">
+                                <img src="<?php echo $this->user_model->get_user_image_url($this->session->userdata('user_id')); ?>" alt="" class="img-fluid">
                             </a>
                         </div>
                         <div class="dropdown user-dropdown corner-triangle top-right">
@@ -100,8 +92,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                                     <a href="">
                                         <div class="clearfix">
                                             <div class="user-image float-left">
-                                                <img src="<?php echo $this->user_model->get_user_image_url($this->session->userdata('user_id')); ?>"
-                                                    alt="">
+                                                <img src="<?php echo $this->user_model->get_user_image_url($this->session->userdata('user_id')); ?>" alt="">
                                             </div>
                                             <div class="user-details">
                                                 <div class="user-name">
@@ -110,39 +101,25 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                                                 </div>
                                                 <div class="user-email">
                                                     <span class="email"><?php echo $user_details['email']; ?></span>
-                                                    <span
-                                                        class="welcome"><?php echo site_phrase("welcome_back"); ?></span>
+                                                    <span class="welcome"><?php echo site_phrase("welcome_back"); ?></span>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
 
-                                <li class="user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('home/my_courses'); ?>"><i
-                                            class="far fa-gem"></i><?php echo site_phrase('my_courses'); ?></a></li>
-                                <li class="user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('home/my_wishlist'); ?>"><i
-                                            class="far fa-heart"></i><?php echo site_phrase('my_wishlist'); ?></a></li>
-                                <li class="user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('home/my_messages'); ?>"><i
-                                            class="far fa-envelope"></i><?php echo site_phrase('my_messages'); ?></a>
+                                <li class="user-dropdown-menu-item"><a href="<?php echo site_url('home/my_courses'); ?>"><i class="far fa-gem"></i><?php echo site_phrase('my_courses'); ?></a></li>
+                                <li class="user-dropdown-menu-item"><a href="<?php echo site_url('home/my_wishlist'); ?>"><i class="far fa-heart"></i><?php echo site_phrase('my_wishlist'); ?></a></li>
+                                <li class="user-dropdown-menu-item"><a href="<?php echo site_url('home/my_messages'); ?>"><i class="far fa-envelope"></i><?php echo site_phrase('my_messages'); ?></a>
                                 </li>
-                                <li class="user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('home/purchase_history'); ?>"><i
-                                            class="fas fa-shopping-cart"></i><?php echo site_phrase('purchase_history'); ?></a>
+                                <li class="user-dropdown-menu-item"><a href="<?php echo site_url('home/purchase_history'); ?>"><i class="fas fa-shopping-cart"></i><?php echo site_phrase('purchase_history'); ?></a>
                                 </li>
-                                <li class="user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('home/profile/user_profile'); ?>"><i
-                                            class="fas fa-user"></i><?php echo site_phrase('user_profile'); ?></a></li>
+                                <li class="user-dropdown-menu-item"><a href="<?php echo site_url('home/profile/user_profile'); ?>"><i class="fas fa-user"></i><?php echo site_phrase('user_profile'); ?></a></li>
                                 <?php if (addon_status('customer_support')) : ?>
-                                <li class="user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('addons/customer_support/user_tickets'); ?>"><i
-                                            class="fas fa-life-ring"></i><?php echo site_phrase('support'); ?></a></li>
+                                    <li class="user-dropdown-menu-item"><a href="<?php echo site_url('addons/customer_support/user_tickets'); ?>"><i class="fas fa-life-ring"></i><?php echo site_phrase('support'); ?></a></li>
                                 <?php endif; ?>
 
-                                <li class="dropdown-user-logout user-dropdown-menu-item"><a
-                                        href="<?php echo site_url('login/logout/user'); ?>"><?php echo site_phrase('log_out'); ?></a>
+                                <li class="dropdown-user-logout user-dropdown-menu-item"><a href="<?php echo site_url('login/logout/user'); ?>"><?php echo site_phrase('log_out'); ?></a>
                                 </li>
                             </ul>
                         </div>
@@ -152,8 +129,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                     <div class="sign-in-box btn-group d-none">
                         <button type="button" class="btn btn-sign-in" data-toggle="modal" data-target="#signInModal">Log
                             In</button>
-                        <button type="button" class="btn btn-sign-up" data-toggle="modal"
-                            data-target="#signUpModal">Sign Up</button>
+                        <button type="button" class="btn btn-sign-up" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
                     </div> <!--  sign-in-box end -->
 
                 </nav>

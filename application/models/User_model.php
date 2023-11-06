@@ -183,6 +183,8 @@ class User_model extends CI_Model
             $data['first_name'] = html_escape($this->input->post('first_name'));
             $data['last_name'] = html_escape($this->input->post('last_name'));
             $data['certificate_name'] = html_escape($this->input->post('certificate_name'));
+            $data['dob'] = html_escape($this->input->post('dob'));
+            $data['address'] = html_escape($this->input->post('address'));
 
             if (isset($_POST['email'])) {
                 $data['email'] = html_escape($this->input->post('email'));

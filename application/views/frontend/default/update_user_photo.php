@@ -22,7 +22,7 @@
                     <div class="user-dashboard-sidebar">
                         <div class="user-box">
                             <img src="<?php echo $this->user_model->get_user_image_url($this->session->userdata('user_id')); ?>" alt="" class="img-fluid">
-                            <div class="name"><?php echo $user_details['first_name'].' '.$user_details['last_name']; ?></div>
+                            <div class="name"><?php echo $user_details['first_name'] . ' ' . $user_details['last_name']; ?></div>
                         </div>
                         <div class="user-dashboard-menu">
                             <ul>
@@ -42,7 +42,7 @@
                                 <div class="email-group">
                                     <div class="form-group">
                                         <label for="user_image"><?php echo site_phrase('upload_image'); ?>:</label>
-                                        <input type="file" class="form-control" name = "user_image" id="user_image">
+                                        <input type="file" class="form-control" name="user_image" id="user_image">
                                     </div>
                                 </div>
                             </div>

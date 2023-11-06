@@ -79,12 +79,28 @@
                                         </div>
 
 
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="dob"><?php echo get_phrase('Date of Birth'); ?><span class=""></span></label>
+                                            <div class="col-md-9">
+                                                <input type="date" class="form-control" id="dob" name="dob" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="dob"><?php echo get_phrase('Address'); ?><span class=""></span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="dob" name="address" required>
+                                            </div>
+                                        </div>
+
+
 
 
                                         <div class="form-group row mb-3">
                                             <label class="col-md-3 col-form-label" for="linkedin_link"><?php echo get_phrase('biography'); ?></label>
                                             <div class="col-md-9">
-                                                <textarea name="biography" id = "summernote-basic" class="form-control"></textarea>
+                                                <textarea name="biography" id="summernote-basic" class="form-control"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">

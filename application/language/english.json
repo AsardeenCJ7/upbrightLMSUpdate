@@ -1275,5 +1275,8 @@
     "you_got": "You got",
     "correct": "Correct",
     "submitted_answers": "Submitted answers",
-    "take_again": "Take again"
+    "take_again": "Take again",
+    "profiles": "Profiles",
+    "date_of_birth": "Date of birth",
+    "permanent_address": "Permanent address"
 }
