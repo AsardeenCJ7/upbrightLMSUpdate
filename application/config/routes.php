@@ -64,5 +64,6 @@ $route['course_bundles/buy/(:any)']                          = "addons/course_bu
 $route['home/my_bundles']                                      = "addons/course_bundles/my_bundles";
 $route['home/bundle_invoice/(:any)']                          = "addons/course_bundles/invoice/$1";
 //end course bundles
+$route['home/construct']                                      = "Underconst/index";
 
 $route['translate_uri_dashes'] = FALSE;

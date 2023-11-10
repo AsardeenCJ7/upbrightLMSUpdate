@@ -2897,4 +2897,17 @@ class Crud_model extends CI_Model
 
         return $total_price > 0 ? $total_price : 0;
     }
+
+
+    // public function saverecord($data){
+    //     $this->db->insert('notify_students',$data);
+    //     return true;
+    // }
+
+
+    public function saverecord($data)
+    {
+        $this->db->insert('notify_students', $data);
+        return true;
+    }
 }

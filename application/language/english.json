@@ -1278,5 +1278,8 @@
     "take_again": "Take again",
     "profiles": "Profiles",
     "date_of_birth": "Date of birth",
-    "permanent_address": "Permanent address"
+    "permanent_address": "Permanent address",
+    "data_deleted": "Data deleted",
+    "already_purch": "Already purch",
+    "learn_more": "Learn more"
 }

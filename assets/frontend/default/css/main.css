@@ -3849,11 +3849,32 @@ footer style
   background: #003440;
 }
 
-div.tagsinput span.tag {
+/* learn more */
+.learn_more a {
+  width: 100%;
+  border: 0;
+  color: #fff;
+  background-color: #24c05d;
+  padding: 11px 12px;
+  font-size: 15px;
+  line-height: 1.43;
+  border-radius: 2px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+.learn_more a:hover,
+.learn_more a:focus {
+  background: #004025;
+}
+
+/* rgb(64, 15, 0) div.tagsinput span.tag {
   background-color: #2196f3;
   border-color: #2196f3;
   color: white;
-}
+} */
+
 div.tagsinput span.tag a {
   color: #ddd;
 }

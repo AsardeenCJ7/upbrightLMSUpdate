@@ -453,7 +453,22 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
               <div class="already_purchased">
                 <a href="<?php echo site_url('home/my_courses'); ?>"><?php echo site_phrase('already_purchased'); ?></a>
               </div>
+
+              
+              <div class="learn_more">
+                <a href="<?php echo site_url('home/lesson/'.rawurlencode(slugify($course_details['title'])).'/'.$course_details['id']); ?>"><?php echo site_phrase('Learn_more'); ?></a>
+              </div>
+
+                
+              <!-- <div class="learn_more">
+                <a href="<?php echo site_url('home/lesson/'.rawurlencode(slugify($course_details['title'])).'/'.$my_course['course_id']); ?>"><?php echo site_phrase('Learn_more'); ?></a>
+              </div> -->
+
             <?php else : ?>
+
+
+
+
 
               <!-- WISHLIST BUTTON -->
               <div class="buy-btns">
