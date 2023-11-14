@@ -1281,5 +1281,14 @@
     "permanent_address": "Permanent address",
     "data_deleted": "Data deleted",
     "already_purch": "Already purch",
-    "learn_more": "Learn more"
+    "learn_more": "Learn more",
+    "question_has_been_deleted": "Question has been deleted",
+    "congratulations!_you_have_completed_the_quiz_successfully.": "Congratulations! you have completed the quiz successfully.",
+    "congratulations!_you_have_successfully_passed_the_quiz_with_a_score_of_75%.": "Congratulations! you have successfully passed the quiz with a score of 75%.",
+    "sorry!_you_have_not_passed_the_quiz._your_score_is_50%._please_retake_the_quiz_to_improve.": "Sorry! you have not passed the quiz. your score is 50%. please retake the quiz to improve.",
+    "sorry!_you_have_not_passed_the_quiz._your_score_is_25%._please_retake_the_quiz_to_improve.": "Sorry! you have not passed the quiz. your score is 25%. please retake the quiz to improve.",
+    "sorry!_you_have_not_passed_the_quiz._your_score_is_0%._please_retake_the_quiz_to_improve.": "Sorry! you have not passed the quiz. your score is 0%. please retake the quiz to improve.",
+    "congratulations!_you_have_successfully_passed_the_quiz_with_a_score_of_100%.": "Congratulations! you have successfully passed the quiz with a score of 100%.",
+    "retake_quiz": "Retake quiz",
+    "you_are_now_ready_to_go_to_the_next_level.": "You are now ready to go to the next level."
 }

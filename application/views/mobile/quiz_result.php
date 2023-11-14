@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card text-white bg-quiz-result-info mb-3">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo get_phrase('review_the_course_materials_to_expand_your_learning'); ?>.</h5>
-                <p class="card-text"><?php echo get_phrase('you_got').' '.$total_correct_answers.' '.get_phrase('out_of').' '.$total_questions.' '.get_phrase('correct'); ?> .</p>
+        <div class="card-body">
+            <h5 class="card-title"><?php echo get_phrase('review_the_course_materials_to_expand_your_learning'); ?>.</h5>
+                <p class="card-text"><?php echo get_phrase('you_got').' '.$total_correct_answers.' '.get_phrase('out_of').' '.$total_questions.' '.get_phrase('correct'); ?> .</p>   
             </div>
         </div>
     </div>

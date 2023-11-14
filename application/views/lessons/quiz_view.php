@@ -8,7 +8,7 @@ $quiz_questions = $this->crud_model->get_quiz_questions($lesson_details['id']);
         <?php if (count($quiz_questions->result_array()) > 0): ?>
             <button type="button" name="button" class="btn btn-sign-up mt-2" style="color: #fff;" onclick="getStarted(1)"><?php echo get_phrase("get_started"); ?></button>
         <?php endif; ?>
-    </div>
+    </div> 
 
     <form class="" id = "quiz_form" action="" method="post">
         <?php if (count($quiz_questions->result_array()) > 0): ?>
