@@ -1,6 +1,6 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+   
+   
     body {
         margin: 0;
     }
@@ -13,7 +13,9 @@
     }
 
     .sign-in-box .btn {
-        font-family: 'Poppins', sans-serif !important;
+        /* font-family: 'Poppins', sans-serif !important; */
+
+        font-family: "Heebo",sans-serif;
         font-size: 14px !important;
         text-transform: uppercase;
         color: #686f7a !important;
@@ -45,9 +47,6 @@
         color: white !important;
     }
 
-    .gen {
-        margin: 10px 10px;
-    }
 
     /* threr button */
     .tab-nav {
@@ -210,7 +209,7 @@
     }
 
     .visible {
-        top: 66px;
+        top: 65px;
         opacity: 1;
     }
 
@@ -275,6 +274,9 @@
     }
 
 
+    .sign-in-box > .btn {
+        padding:6px 10px !important;
+    }
 
     /* Change link underlines to green on hover */
 ul.ul3 li.category-item a:hover {
@@ -293,11 +295,18 @@ ul.ul3 li.category-item a:hover {
     .tab-nav {
         display: none !important; /* Hide the .tab-nav on mobile */
     }
-} 
 
 
-    /* Show subcategories when the category is hovered */
+    .dropdown-menu.show {
+        width: 100%;
+    text-align: left;
+    }
+ 
+
 </style>
+
+
+
 <section class="menu-area">
     <div class="container-xl">
         <div class="row">
@@ -306,14 +315,14 @@ ul.ul3 li.category-item a:hover {
 
                     <ul class="mobile-header-buttons">
                         <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
-                        <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
+                    <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
                     </ul>
 
-                    <a href="#" class="navbar-brand" href="#"><img src="<?php echo base_url('uploads/system/' . get_frontend_settings('dark_logo')); ?>" alt="" height="40"></a>
+                    <a href="<?php echo site_url('home'); ?>" class="navbar-brand" href="#"><img src="<?php echo base_url('uploads/system/' . get_frontend_settings('dark_logo')); ?>" alt="" height="40"></a>
 
                     <?php include 'menu.php'; ?>
 
-                    <!-- <form class="inline-form" action="<?php echo site_url('home/search'); ?>" method="get"
+                     <form class="inline-form" action="<?php echo site_url('home/search'); ?>" method="get"
                         style="width: 100%;">
                         <div class="input-group search-box mobile-search" style="margin-bottom:0px;">
                             <input type="text" name='query' class="form-control"
@@ -322,7 +331,7 @@ ul.ul3 li.category-item a:hover {
                                 <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
-                    </form> -->
+                    </form> 
                     <div style="width: 100%"></div>
 
                     <?php if ($this->session->userdata('admin_login')) : ?>
@@ -333,31 +342,54 @@ ul.ul3 li.category-item a:hover {
                         </div>
                     <?php endif; ?>
 
-                    <div class="cart-box menu-icon-box" id="cart_items">
-                        <?php include 'cart_items.php'; ?>
-                    </div>
-
                     <span class="signin-box-move-desktop-helper"></span>
-                    <div class="sign-in-box btn-group">
-                        <!--Here gen class to use css purpose-->
-                        <!-- <a href="https://upbright.lk/about" class="btn btn-sign-in gen"
-                            style="background:transparent;"><?php echo site_phrase('About'); ?></a> -->
-                        <!-- <a href="https://shop.upbright.lk/blog" class="btn btn-sign-in gen"
-                            style="background:transparent;"><?php echo site_phrase('Blog'); ?></a> -->
-                        <!-- <a href="https://upbright.lk/contact" class="btn btn-sign-in gen"
-                            style="background:transparent;"><?php echo site_phrase('Contact'); ?></a> -->
-                        <a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent;"><?php echo site_phrase('log_in'); ?></a>
-                        <a href="<?php echo site_url('home/sign_up'); ?>" class="btn btn-sign-up gen"><?php echo site_phrase('sign_up'); ?></a>
 
-                    </div> <!--  sign-in-box end -->
-                </nav>
 
-            </div>
-        </div>
+<div class="sign-in-box btn-group">
+    <div class="btn-group">
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://upbright.lk/about">About</a></li>
+            <li><a class="dropdown-item" href="https://shop.upbright.lk/blog">Blog</a></li>
+            <li><a class="dropdown-item" href="https://upbright.lk/contact">Contact</a></li>
+        </ul>
     </div>
+    <div class="btn-group" style="border:none;">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: none;">
+        RESOURCE
+        </button>
+  <div class="dropdown-menu" style="margin-top:11px;" style="">
+    <a class="dropdown-item" href="#">Free EBay's Tools</a>
+    <a class="dropdown-item" href="#">UB Blog</a>
+    <a class="dropdown-item" href="#">FreeQuizzes</a>
+    <a class="dropdown-item" href="#">UB Services</a>
+    <a class="dropdown-item" href="#">UB Foundation</a>
+  </div>
+</div>
 
-    <!-- This is for create for fiver nav bar like category display and 3 buttons are when scroll down the cursor bel
-below the buttons -->
+
+<div class="btn-group" style="border:none;">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: none;">
+    PARTNER UP
+  </button>
+  <div class="dropdown-menu" style="margin-top:11px;" style="">
+    <a class="dropdown-item" href="#">Apply For Job</a>
+    <a class="dropdown-item" href="#">UB Franchises</a>
+    <a class="dropdown-item" href="#">UB Corporates PARTNER</a>
+    <a class="dropdown-item" href="#">UB Digital PARTNER</a>
+  </div>
+</div>
+
+
+<a href="<?php echo site_url('home/sign_up'); ?>" class="btn btn-sign-up gen" style="border-radius:15px !important;    padding: 3px 10px;"><?php echo site_phrase('Register'); ?></a>
+<a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent; border:2px solid #30c465 !important; border-radius:15px !important"><?php echo site_phrase('login'); ?></a>     
+<!--  sign-in-box end -->
+                
+</nav>
+</div>
+</div>
+</div>
+
+    <!-- This is for create for fiver navbar like category display and 3 buttons are when scroll down the cursor_below the buttons -->
 
 
 <div class="category-section">
@@ -411,7 +443,6 @@ below the buttons -->
 </div> -->
 
 
-
 <div class="category-section">
     <div class="fix-width container-xl">
         <ul class="ul3 ml-0" style="display: flex !important; justify-content: center; padding: 10px 0; align-items: center; gap: 50px;">
@@ -433,6 +464,7 @@ below the buttons -->
     </div>
 </div>
 </div>
+
 
 
 
@@ -463,11 +495,10 @@ below the buttons -->
 <script>
 
 
-    // Function to handle scrolling
+// Function to handle scrolling
 function handleScroll() {
   const categorySection = document.querySelector('.category-section');
   const tabNav = document.querySelector('.tab-nav');
-
   // Check if the user has scrolled down at least 100 pixels to make the category section visible
   if (window.scrollY >= 100) {
     categorySection.classList.add('visible');
@@ -506,3 +537,6 @@ window.addEventListener('scroll', handleScroll);
 </script>
 
 
+<script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</script>

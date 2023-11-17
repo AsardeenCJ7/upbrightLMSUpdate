@@ -589,10 +589,10 @@ menu code was here
 }
 
 .sign-in-box > .btn {
-  padding: 11px 12px;
+  /* padding: 11px 12px; */
   font-size: 15px;
   border-radius: 2px;
-  line-height: 1.35135;
+  /* line-height: 2; */
   font-weight: 600;
   margin-left: 5px !important;
   border-radius: 2px !important;

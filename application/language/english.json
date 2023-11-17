@@ -1290,5 +1290,6 @@
     "sorry!_you_have_not_passed_the_quiz._your_score_is_0%._please_retake_the_quiz_to_improve.": "Sorry! you have not passed the quiz. your score is 0%. please retake the quiz to improve.",
     "congratulations!_you_have_successfully_passed_the_quiz_with_a_score_of_100%.": "Congratulations! you have successfully passed the quiz with a score of 100%.",
     "retake_quiz": "Retake quiz",
-    "you_are_now_ready_to_go_to_the_next_level.": "You are now ready to go to the next level."
+    "you_are_now_ready_to_go_to_the_next_level.": "You are now ready to go to the next level.",
+    "explore": "Explore"
 }

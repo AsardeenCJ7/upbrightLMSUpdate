@@ -2,9 +2,9 @@
 .home-fact-area {
     background: linear-gradient(-45deg, #049738, #30c465);
 }
-.input-group {
+/* .input-group {
     width: 100%;
-}
+} */
 
 .home-banner-wrap .btn,
     {}

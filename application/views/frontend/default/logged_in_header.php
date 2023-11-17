@@ -35,23 +35,17 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                         </div>
                     </form>
 
-                    <div class="instructor-box">
-                        <div class="icon">
-                            <a href="https://upbright.lk/about" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('About'); ?></a>
-                        </div>
-                    </div>
-
-                    <div class="instructor-box">
-                        <div class="icon">
-                            <a href="https://shop.upbright.lk/blog" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('Blog'); ?></a>
-                        </div>
-                    </div>
-
-                    <div class="instructor-box">
-                        <div class="icon">
-                            <a href="https://upbright.lk/contact" style="border: 1px solid transparent; margin: 10px 10px; font-size: 14px; width: 100%; border-radius: 0; min-width: 100px; text-transform: uppercase;"><?php echo site_phrase('Contact'); ?></a>
-                        </div>
-                    </div>
+                    <div class="btn-group" style=";">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:red;">
+    PARTNER UP
+  </button>
+  <div class="dropdown-menu" style="margin-top:11px;" style="">
+    <a class="dropdown-item" href="#">Apply For Job</a>
+    <a class="dropdown-item" href="#">UB Franchises</a>
+    <a class="dropdown-item" href="#">UB Corporates PARTNER</a>
+    <a class="dropdown-item" href="#">UB Digital PARTNER</a>
+  </div>
+</div>
 
                     <?php if (get_settings('allow_instructor') == 1) : ?>
                         <div class="instructor-box menu-icon-box">
@@ -75,8 +69,8 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                         <?php include 'cart_items.php'; ?>
                     </div>
 
-                    <?php //include 'notifications.php'; 
-                    ?>
+                    <!-- <?php include 'notifications.php'; 
+                    ?> -->
 
 
                     <div class=" user-box menu-icon-box">
@@ -127,9 +121,9 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
 
                     <span class="signin-box-move-desktop-helper"></span>
                     <div class="sign-in-box btn-group d-none">
+                        <button type="button" class="btn btn-sign-up" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
                         <button type="button" class="btn btn-sign-in" data-toggle="modal" data-target="#signInModal">Log
                             In</button>
-                        <button type="button" class="btn btn-sign-up" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
                     </div> <!--  sign-in-box end -->
 
                 </nav>
@@ -137,3 +131,29 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
         </div>
     </div>
 </section>
+
+
+<script>
+
+
+// Function to handle scrolling
+function handleScroll() {
+  const categorySection = document.querySelector('.category-section');
+  const tabNav = document.querySelector('.tab-nav');
+  // Check if the user has scrolled down at least 100 pixels to make the category section visible
+  if (window.scrollY >= 100) {
+    categorySection.classList.add('visible');
+    // Hide the tab-nav element
+    tabNav.style.display = 'none';
+  } else {
+    categorySection.classList.remove('visible');
+    // Show the tab-nav element
+    tabNav.style.display = 'block';
+  }
+}
+
+// Add an event listener for scrolling
+window.addEventListener('scroll', handleScroll);
+
+    
+</script>
