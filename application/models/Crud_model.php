@@ -604,6 +604,9 @@ class Crud_model extends CI_Model
         $data['short_description'] = html_escape($this->input->post('short_description'));
         $data['description'] = $this->input->post('description');
         $data['closing_date'] = $this->input->post('closing_date');
+        $data['course_percentage'] = $this->input->post('course_percentage');
+        $data['select_month'] = $this->input->post('select_month');
+        $data['select_year'] = $this->input->post('select_year');
         $data['outcomes'] = $outcomes;
         $data['language'] = $this->input->post('language_made_in');
         $data['sub_category_id'] = $this->input->post('sub_category_id');

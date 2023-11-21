@@ -235,12 +235,55 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                 </div>
 
 
+
+                                                <!-- New data add start -->
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('closing_Date'); ?></label>
+    <label class="col-md-2 col-form-label" for="closing_date"><?php echo get_phrase('closing_Date'); ?></label>
+    <div class="col-md-10">
+        <!-- Check if closing_date is set, and format it for the datetime-local input -->
+        <input type="datetime-local" class="form-control" id="closing_date" name="closing_date" value="<?php echo isset($course_details['closing_date']) ? date('Y-m-d\TH:i', strtotime($course_details['closing_date'])) : ''; ?>">
+    </div>
+</div>
+
+
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('course_percentage'); ?></label>
                                                     <div class="col-md-10">
-                                                        <input type="date" class="form-control" id="course_title" name="closing_date" value="<?php echo $course_details['closing-date']; ?>">
+                                                        <input type="number" class="form-control" id="course_title" name="course_percentage" value="<?php echo $course_details['course_percentage']; ?>">
                                                     </div>
                                                 </div>
+
+                                                <div class="form-group row mb-3">
+    <label class="col-md-2 col-form-label" for="select_month"><?php echo get_phrase('Select Month'); ?></label>
+    <div class="col-md-10">
+        <select class="form-control" id="select_month" name="select_month" required>
+            <option value="0" <?php echo empty($course_details['select_month']) ? 'selected' : ''; ?>>Select Month</option>
+            <option value="January" <?php echo ($course_details['select_month'] == 'January') ? 'selected' : ''; ?>>January</option>
+            <option value="February" <?php echo ($course_details['select_month'] == 'February') ? 'selected' : ''; ?>>February</option>
+            <option value="March" <?php echo ($course_details['select_month'] == 'March') ? 'selected' : ''; ?>>March</option>
+            <option value="April" <?php echo ($course_details['select_month'] == 'April') ? 'selected' : ''; ?>>April</option>
+            <option value="May" <?php echo ($course_details['select_month'] == 'May') ? 'selected' : ''; ?>>May</option>
+            <option value="June" <?php echo ($course_details['select_month'] == 'June') ? 'selected' : ''; ?>>June</option>
+            <option value="July" <?php echo ($course_details['select_month'] == 'July') ? 'selected' : ''; ?>>July</option>
+            <option value="August" <?php echo ($course_details['select_month'] == 'August') ? 'selected' : ''; ?>>August</option>
+            <option value="September" <?php echo ($course_details['select_month'] == 'September') ? 'selected' : ''; ?>>September</option>
+            <option value="October" <?php echo ($course_details['select_month'] == 'October') ? 'selected' : ''; ?>>October</option>
+            <option value="November" <?php echo ($course_details['select_month'] == 'November') ? 'selected' : ''; ?>>November</option>
+            <option value="December" <?php echo ($course_details['select_month'] == 'December') ? 'selected' : ''; ?>>December</option>
+        </select>
+    </div>
+</div>
+
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('year_of_batch'); ?></label>
+                                                    <div class="col-md-10">
+                                                        <input type="number" class="form-control" id="course_title" name="select_year" value="<?php echo $course_details['select_year']; ?>">
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!-- New data add end -->
 
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>

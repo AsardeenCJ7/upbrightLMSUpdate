@@ -1,0 +1,40 @@
+<div class="container">
+    <?php
+    // Set the inline style and color based on the correctness
+    $correctStyle = 'color: green;';
+    $wrongStyle = 'color: red;';
+
+    // Get current date and time
+    $currentDateTime = new DateTime();
+    $completionDate = $currentDateTime->format('Y-m-d'); // Format as desired, e.g., 'Y-m-d'
+    $completionTime = $currentDateTime->format('H:i:s'); // Format as desired, e.g., 'H:i:s'
+    ?>
+
+    <!-- Correct and wrong answers display -->
+
+    <div class="answers-container">
+        <p style="<?php echo $correctStyle; ?>">Correct Answers:
+            <?php echo $correctQuestions; ?>
+        </p>
+        <p style="<?php echo $wrongStyle; ?>">Wrong Answers:
+            <?php echo $totalQuestions - $correctQuestions; ?>
+        </p>
+    </div>
+
+    <!-- Display the date of completion and time -->
+
+    <div class="date-time-container">
+        <p>Date of Completion:
+            <?php echo $completionDate; ?>
+        </p>
+        <p>Time:
+            <?php echo $completionTime; ?>
+        </p>
+    </div>
+
+    <!-- Labels with dynamically changing colors based on the correctness -->
+    <label style="<?php echo $correctStyle; ?>"
+        class="label <?php echo ($correctQuestions > 0) ? 'selected' : ''; ?>">Correct</label>
+    <label style="<?php echo $wrongStyle; ?>"
+        class="label <?php echo ($totalQuestions - $correctQuestions > 0) ? 'selected' : ''; ?>">Wrong</label>
+</div>
