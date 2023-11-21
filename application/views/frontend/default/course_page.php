@@ -148,7 +148,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
                     <?php echo $course_details['select_month']; ?> Batch <?php echo $course_details['select_year']; ?>
                 </h3><br>
                 <hr>
-                <div class="buttons">
+                <div class="buttons" id="countdown-timer">
                     <button class="neumorphic active" disabled>
                         <span>Days</span>
                         <span id="days"></span>
@@ -171,9 +171,6 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
     </div>
 </section>
 <?php endif; ?>
-
-
-
 <?php if ($course_details['course_percentage'] !== null && is_numeric($course_details['course_percentage'])): ?>
 <section class="course-content-area">
     <div class="container">
