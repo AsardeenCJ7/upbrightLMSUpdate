@@ -140,7 +140,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
 </section>
 
 <?php
-if (!empty($course_details['closing_date'])) {
+if (!empty($course_details['closing_date']) && $course_details['closing_date'] != '0000-00-00 00:00:00') {
     $closingDate = DateTime::createFromFormat('Y-m-d H:i:s', $course_details['closing_date']);
     
     if ($closingDate !== false) {
@@ -181,6 +181,7 @@ if (!empty($course_details['closing_date'])) {
     }
 }
 ?>
+
 
 
 
