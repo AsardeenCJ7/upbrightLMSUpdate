@@ -15,7 +15,7 @@ if (isset($sub_category_id)) {
 }
 ?>
 
-<section class="category-header-area">
+<section class="category-header-area" style="display:none;">
     <div class="container-lg">
         <div class="row">
             <div class="col">
@@ -48,7 +48,7 @@ if (isset($sub_category_id)) {
 <section class="category-course-list-area">
     <div class="container">
         <div class="category-filter-box filter-box clearfix">
-            <span><?php echo site_phrase('showing_on_this_page'); ?> : <?php echo count($courses); ?></span>
+           <strong> <span style="font-size:30px;"> <?php echo count($courses); ?> <?php echo site_phrase('results for'); ?><?php echo ' "'.$search_string.'"'; ?></span></strong>
             <a href="javascript::" onclick="toggleLayout('grid')" style="float: right; font-size: 19px; margin-left: 5px;"><i class="fas fa-th"></i></a>
             <a href="javascript::" onclick="toggleLayout('list')" style="float: right; font-size: 19px;"><i class="fas fa-th-list"></i></a>
             <a href="<?php echo site_url('home/courses'); ?>" style="float: right; font-size: 19px; margin-right: 5px;"><i class="fas fa-sync-alt"></i></a>

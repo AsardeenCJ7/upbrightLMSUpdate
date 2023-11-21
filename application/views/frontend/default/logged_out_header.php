@@ -198,7 +198,6 @@
         transition: 2s;
         position: fixed;
         z-index: 5;
-        transition: 0.2s;
         top: -40px;
         opacity: 0;
     }
@@ -315,10 +314,17 @@ ul.ul3 li.category-item a:hover {
 
                     <ul class="mobile-header-buttons">
                         <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
+                    </ul>
+
+                    
+                    <ul class="mobile-header-buttons">
                     <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
                     </ul>
 
                     <a href="<?php echo site_url('home'); ?>" class="navbar-brand" href="#"><img src="<?php echo base_url('uploads/system/' . get_frontend_settings('dark_logo')); ?>" alt="" height="40"></a>
+           
+
+                    
 
                     <?php include 'menu.php'; ?>
 
@@ -357,7 +363,7 @@ ul.ul3 li.category-item a:hover {
         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: none;">
         RESOURCE
         </button>
-  <div class="dropdown-menu" style="margin-top:11px;" style="">
+  <div class="dropdown-menu" style="margin-top:11px;">
     <a class="dropdown-item" href="#">Free EBay's Tools</a>
     <a class="dropdown-item" href="#">UB Blog</a>
     <a class="dropdown-item" href="#">FreeQuizzes</a>
@@ -371,7 +377,7 @@ ul.ul3 li.category-item a:hover {
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: none;">
     PARTNER UP
   </button>
-  <div class="dropdown-menu" style="margin-top:11px;" style="">
+  <div class="dropdown-menu" style="margin-top:11px;">
     <a class="dropdown-item" href="#">Apply For Job</a>
     <a class="dropdown-item" href="#">UB Franchises</a>
     <a class="dropdown-item" href="#">UB Corporates PARTNER</a>
@@ -380,14 +386,18 @@ ul.ul3 li.category-item a:hover {
 </div>
 
 
+<!--    <div class="cart-box menu-icon-box" id = "cart_items">-->
+<!--        --><?php //include 'cart_items.php'; ?>
+<!--    </div>-->
+
 <a href="<?php echo site_url('home/sign_up'); ?>" class="btn btn-sign-up gen" style="border-radius:15px !important;    padding: 3px 10px;"><?php echo site_phrase('Register'); ?></a>
-<a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent; border:2px solid #30c465 !important; border-radius:15px !important"><?php echo site_phrase('login'); ?></a>     
+<a href="<?php echo site_url('home/login'); ?>" class="btn btn-sign-in gen" style="background:transparent; border:2px solid #30c465 !important; border-radius:15px !important"><?php echo site_phrase('login'); ?></a>
 <!--  sign-in-box end -->
-                
+
 </nav>
-</div>
-</div>
-</div>
+        </div>
+    </div>
+    </div>
 
     <!-- This is for create for fiver navbar like category display and 3 buttons are when scroll down the cursor_below the buttons -->
 
@@ -400,8 +410,6 @@ ul.ul3 li.category-item a:hover {
             foreach ($categories as $key => $category) : ?>
 
                 <li class="category-item"><a href="#" id=""><?php echo $category['name']; ?></a>
-
-
                 <!-- This is for subcategory -->
             <ul class="subcategories">
                         <?php
@@ -412,12 +420,11 @@ ul.ul3 li.category-item a:hover {
                         <?php endforeach; ?>
                     </ul> 
                 </li>
-
             <?php endforeach; ?>
         </ul>
     </div>
 </div>
-</div>
+
 
 
 <!-- <div class="category-section">

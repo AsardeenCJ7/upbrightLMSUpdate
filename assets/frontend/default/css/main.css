@@ -2405,6 +2405,7 @@ category page
 */
 
 section.category-header-area {
+  /* display: none !important; */
   padding: 40px 0 30px;
   background: #29303b;
   color: #fff;

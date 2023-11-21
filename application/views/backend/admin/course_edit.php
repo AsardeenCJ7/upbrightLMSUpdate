@@ -233,6 +233,15 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                                         <textarea name="description" id="description" class="form-control"><?php echo $course_details['description']; ?></textarea>
                                                     </div>
                                                 </div>
+
+
+                                                <div class="form-group row mb-3">
+                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('closing_Date'); ?></label>
+                                                    <div class="col-md-10">
+                                                        <input type="date" class="form-control" id="course_title" name="closing_date" value="<?php echo $course_details['closing-date']; ?>">
+                                                    </div>
+                                                </div>
+
                                                 <div class="form-group row mb-3">
                                                     <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
                                                     <div class="col-md-10">

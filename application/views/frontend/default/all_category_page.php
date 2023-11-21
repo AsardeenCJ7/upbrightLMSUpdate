@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="category-filter-box filter-box clearfix">
+                <div class="category-filter-box filter-box clearfix" style=""display:none">
                     <a href = "<?php echo site_url('home/all_category'); ?>" class="btn btn-outline-secondary all-btn"><?php echo site_phrase('all'); ?></a>
                 </div>
                 <div class="category-course-list">

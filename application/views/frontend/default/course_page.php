@@ -1,3 +1,60 @@
+<style>
+  #clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div{
+  margin:0px;
+	padding: 10px;
+	border-radius: 3px;
+	background: #29303b;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #30c465;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    #clockdiv {
+        flex-direction: column;
+    }
+
+    #clockdiv > div {
+        flex: 1;
+        margin: 5px;
+    }
+
+    #clockdiv  {
+      display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px; 
+    }
+}
+
+
+
+
+
+
+</style>
+
+
+
 <?php
 $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 $instructor_details = $this->user_model->get_all_user($course_details['user_id'])->row_array();
@@ -52,6 +109,7 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
               <span class="last-updated-date"><?php echo site_phrase('last_updated') . ' ' . date('D, d-M-Y', $course_details['last_modified']); ?></span>
             <?php else : ?>
               <span class="last-updated-date"><?php echo site_phrase('last_updated') . ' ' . date('D, d-M-Y', $course_details['date_added']); ?></span>
+                <span class="last-updated-date"><?php echo site_phrase('closing_date') . ' ' . date('D, d-M-Y', $course_details['closing_date']); ?></span>
             <?php endif; ?>
             <span class="comment"><i class="fas fa-comment"></i><?php echo ucfirst($course_details['language']); ?></span>
           </div>
@@ -65,10 +123,35 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
 </section>
 
 
+
+
+
 <section class="course-content-area">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
+
+
+<div id="clockdiv" class="container-fluid" <style lang="">
+  
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+  <br>
+</div>
 
         <div class="what-you-get-box">
           <div class="what-you-get-title"><?php echo site_phrase('what_will_i_learn'); ?>?</div>
@@ -727,4 +810,51 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
     var redirect_to = $(this).attr('redirect_to');
     window.location.replace(redirect_to);
   });
+</script>
+
+<script>
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.now();
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
+
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
+
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
+
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    // Set the deadline to November 30th at 6:00 PM
+    var deadline = new Date('November 30, ' + new Date().getFullYear() + ' 18:00:00');
+
+    // Initialize the clock with the deadline
+    initializeClock('clockdiv', deadline);
 </script>

@@ -1,4 +1,4 @@
-<section class="category-header-area">
+<section class="category-header-area" >
     <div class="container-lg">
         <div class="row">
             <div class="col">
