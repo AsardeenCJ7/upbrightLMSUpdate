@@ -321,7 +321,145 @@ a {
 </style>
 
 
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+<!--footer mobile-->
+<style>
+.menus a {
+    display: block;
+    padding: 5pxpx 15px;
+    color: hsla(0, 0%, 100%, .67)
+}
+
+.drop-downz a {
+    min-width: 90px;
+}
+
+.drop-downz-menus {
+    display: block;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .8) !important;
+
+}
+
+.menus-title {
+    cursor: pointer;
+}
+
+.menus-title {
+    display: block;
+    padding: 10px 10px 10px 5px;
+}
+
+.activate {
+    display: none;
+
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    margin: 0 0 0 -15px;
+    opacity: 0;
+}
+
+/* Skin */
+
+.menus a,
+.drop-downz-menus {
+    /*background: #3d6d99;*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5796d0), color-stop(100%,#3d6d99));*/
+    /*background: -moz-linear-gradient(top, #5796d0 0%, #3d6d99 100%);*/
+}
+
+.menus a:hover,
+.drop-downz-menus:hover {
+    /*background: #5a6470;*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#495261), color-stop(100%,#38404b));*/
+    /*background: -moz-linear-gradient(top, #495261 0%, #38404b 100%);*/
+}
+
+.drop-downz a {
+    background: transparent;
+}
+
+.drop-downz a:hover {
+    background: transparent;
+}
+
+
+.menus {
+    /*background: #3d6d99;*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5796d0), color-stop(100%,#3d6d99));*/
+    /*background: -moz-linear-gradient(top, #5796d0 0%, #3d6d99 100%);*/
+    background-color: #181d38 !important;
+    color: #fff;
+    padding: 25px 20px;
+}
+
+:checked~.menus-title {
+    /*background: #495261;*/
+    background: #182157;
+}
+
+.drop-downz {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.drop-downz a {
+    background: transparent;
+    color: hsla(0, 0%, 100%, .67);
+}
+
+.activate:checked~.drop-downz {
+    max-height: 500px;
+}
+
+.drop-downz,
+.menus a,
+.drop-downz-menus {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 10px 0 10px;
+    padding: 0px 10px;
+
+}
+
+.iconz {
+    float: right;
+    margin-top: 3px;
+    transition: transform 0.3s;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+.drop-downz {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:checked+.menus-title .icon {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+
+    /* Hide elements with class 'mobile-only' on screens wider than 768px */
+    .mobile-only {
+        display: none;
+    }
+}
+</style>
+
+<!--end footer mobile-->
+
+
+
+
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn d-none d-md-block" data-wow-delay="0.1s">
 
     <div class="container py-5">
         <div class="row g-5">
@@ -549,6 +687,179 @@ if ($stripe_info[0]['active'] == 0) {
         </div>
     </div>
 </div><!-- Modal -->
+
+
+
+
+
+
+<!--new footer mobile view-->
+
+<div class="menus mobile-only">
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-1" name="accordion">
+        <label for="accordion-1" class="menus-title">Course<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="">Fiverr</a>
+            <a class="last" href="">Ebay</a>
+        </div>
+    </div>
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-2" name="accordion">
+        <label for="accordion-2" class="menus-title">Softwares<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="">Plagiarism Checker</a>
+            <a href="">Video Editing</a>
+            <a href="">Graphic Design</a>
+            <a href="">Operating System</a>
+            <a href="">MS Office</a>
+            <a href="">Photoshop</a>
+            <a class="last" href="">AI Tools</a>
+        </div>
+    </div>
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-3" name="accordion">
+        <label for="accordion-3" class="menus-title">UB Services<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="">eBay tracking tool</a>
+            <a href="">eBay shipping tracking</a>
+            <a href="">eBay SwiftShip / eBay Express</a>
+            <a href="">Fiverr test helper</a>
+            <a href="">Normal</a>
+            <a class="last" href="">Fiverr online keeper</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-4" name="accordion">
+        <label for="accordion-4" class="menus-title">Become a partner<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="">UB franchises</a>
+            <a href="">UB Corporates PARTNER</a>
+            <a href="">UB digital PARTNER</a>
+            <a class="" href="#">Apply for job</a>
+        </div>
+    </div>
+
+
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-5" name="accordion">
+        <label for="accordion-5" class="menus-title">Company<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="">Privacy Policy</a>
+            <a href="">Terms & Condition</a>
+            <a href="">Class Terms & Condition</a>
+            <a href="">Refund & Cancellation Policy</a>
+            <a href="">Contact Us</a>
+            <a class="last" href="">About Us</a>
+        </div>
+    </div>
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-6" name="accordion">
+        <label for="accordion-6" class="menus-title">Resourcer<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="">Free EBay's Tools</a>
+            <a href="">UB Blog</a>
+            <a href="">Free Quizzes</a>
+            <a href="https://shop.upbright.lk/services">UB Services</a>
+            <a class="last" href="">UB Foundation</a>
+        </div>
+    </div>
+
+
+
+    <div class="drop-downz-menus mobile-only">
+        <input type="checkbox" class="activate" id="accordion-7" name="accordion">
+        <label for="accordion-7" class="menus-title">Live Support<span class="iconz">&#9660;</span></label>
+        <div class="drop-downz">
+            <a href="https://t.me/upbright_customer_service">Customer Support</a>
+            <a class="last" href="https://t.me/upbright_intro">Earning Live Updates</a>
+        </div>
+    </div>
+
+
+    <div class="drop-downz-menus mobile-only" style="border-bottom: none !important;">
+        <label for="accordion-7" class="menus-title">Contact</label>
+        <div class="col-lg-3 col-md-6">
+            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>136 Main Cross Road, 30400, Valaichenai, SriLanaka
+            </p>
+            <div class="d-flex" style="padding-bottom: 10px; gap: 10px;">
+                <a class="btn btn-outline-light btn-social"
+                    style="padding-top: 5px; padding-bottom: 5px; border-radius: 10px;"
+                    href="https://wa.me/94742427711"><i class="fab fa-whatsapp"></i></a>
+                <a class="btn btn-outline-light btn-social"
+                    style="padding-top: 5px; padding-bottom: 5px; border-radius: 10px;"
+                    href="https://www.instagram.com/upbright.lk/"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-social"
+                    style="padding-top: 5px; padding-bottom: 5px; border-radius: 10px;"
+                    href="https://www.facebook.com/upbright.lk"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social"
+                    style="padding-top: 5px; padding-bottom: 5px; border-radius: 10px;"
+                    href="https://www.youtube.com/@UPBRIGHTT"><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-outline-light btn-social"
+                    style="padding-top: 5px; padding-bottom: 5px; border-radius: 10px;"
+                    href="https://www.linkedin.com/company/upbright-pvt-ltd/?originalSubdomain=lk"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="position-relative mx-auto" style="max-width: 400px;">
+                <form action="" method="POST">
+
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" name="email"
+                        placeholder="Your email">
+                    <button type="submit"
+                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                </form>
+            </div>
+            <div class="position-relative mx-auto" style="max-width: 400px;">
+                <button type="button" class="btn btn-primary position-absolute top-0"
+                    style="width: 100%;margin-top: 10px;"><a href="{{URL::route('franch')}}" style="color: #fff">Apply
+                        Frachsies</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="drop-downz-menus mobile-only" style="margin-top: 102px; border-bottom: none !important;">
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; Upbright, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end new footer mobile-->
+<!-- End Footer-->
+
+
+<!--mobile footer-->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('.activate');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            checkboxes.forEach(function(otherCheckbox) {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.checked = false;
+                }
+            });
+        });
+    });
+});
+</script>
+<!--end mobile footer-->
+
+
 
 <script type="text/javascript">
 function switch_language(language) {
