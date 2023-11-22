@@ -303,9 +303,6 @@ ul.ul3 li.category-item a:hover {
  
 
 </style>
-
-
-
 <section class="menu-area">
     <div class="container-xl">
         <div class="row">
@@ -314,18 +311,12 @@ ul.ul3 li.category-item a:hover {
 
                     <ul class="mobile-header-buttons">
                         <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
-                    </ul>
-
-                    
+                    </ul> 
                     <ul class="mobile-header-buttons">
                     <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
                     </ul>
 
                     <a href="<?php echo site_url('home'); ?>" class="navbar-brand" href="#"><img src="<?php echo base_url('uploads/system/' . get_frontend_settings('dark_logo')); ?>" alt="" height="40"></a>
-           
-
-                    
-
                     <?php include 'menu.php'; ?>
 
                      <form class="inline-form" action="<?php echo site_url('home/search'); ?>" method="get"
@@ -399,16 +390,13 @@ ul.ul3 li.category-item a:hover {
     </div>
     </div>
 
-    <!-- This is for create for fiver navbar like category display and 3 buttons are when scroll down the cursor_below the buttons -->
-
-
+<!-- This is for create for fiver navbar like category display and 3 buttons are when scroll down the cursor_below the buttons -->
 <div class="category-section">
     <div class="fix-width container-xl">
         <ul class="ul3 ml-0" style="display: flex !important;justify-content: center;padding: 10px 0;align-items: center;gap: 50px;">
             <?php
             $categories = $this->crud_model->get_categories()->result_array();
             foreach ($categories as $key => $category) : ?>
-
                 <li class="category-item"><a href="#" id=""><?php echo $category['name']; ?></a>
                 <!-- This is for subcategory -->
             <ul class="subcategories">
@@ -424,57 +412,6 @@ ul.ul3 li.category-item a:hover {
         </ul>
     </div>
 </div>
-
-
-
-<!-- <div class="category-section">
-    <div class="fix-width container-xl">
-        <ul class="ul3 ml-0" style="display: flex !important; justify-content: center; padding: 10px 0; align-items: center; gap: 50px;">
-            <?php
-            $categories = $this->crud_model->get_categories()->result_array();
-            $firstCategory = true;
-            foreach ($categories as $key => $category) : ?>
-                <li class="category-item">
-                    <a href="#" id=""><?php echo $category['name']; ?></a>
-                    <?php
-                    if ($firstCategory) {
-                        $firstCategory = false;
-                        continue; // Skip the rest of the loop for subsequent categories
-                    }
-                    ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-</div>
-</div> -->
-
-
-<div class="category-section">
-    <div class="fix-width container-xl">
-        <ul class="ul3 ml-0" style="display: flex !important; justify-content: center; padding: 10px 0; align-items: center; gap: 50px;">
-            <?php
-            $categories = $this->crud_model->get_categories()->result_array();
-            $firstCategory = true;
-            foreach ($categories as $key => $category) : ?>
-                <li class="category-item">
-                    <a href="#" id=""><?php echo $category['name']; ?></a>
-                    <?php
-                    if ($firstCategory) {
-                        $firstCategory = false;
-                        continue; // Skip the rest of the loop for subsequent categories
-                    }
-                    ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-</div>
-</div>
-
-
-
-
 <div class="tab-nav bg-transparent" style="background:#fff;">
         <ul>
             <li class="tab-nav__cta cta">
