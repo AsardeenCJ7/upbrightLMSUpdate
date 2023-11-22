@@ -1310,5 +1310,6 @@
     "course_percentage": "Course percentage",
     "select_month": "Select month",
     "select_year": "Select year",
-    "year_of_batch": "Year of batch"
+    "year_of_batch": "Year of batch",
+    "select_course_status": "Select course status"
 }
