@@ -607,6 +607,7 @@ class Crud_model extends CI_Model
         $data['course_percentage'] = $this->input->post('course_percentage');
         $data['select_month'] = $this->input->post('select_month');
         $data['select_year'] = $this->input->post('select_year');
+        $data['course_status'] = $this->input->post('course_status');
         $data['outcomes'] = $outcomes;
         $data['language'] = $this->input->post('language_made_in');
         $data['sub_category_id'] = $this->input->post('sub_category_id');
