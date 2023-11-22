@@ -139,7 +139,13 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
     </div>
 </section>
 
-<?php if (!empty($course_details['closing_date'])): ?>
+<?php
+if (!empty($course_details['closing_date']) && $course_details['closing_date'] != '0000-00-00 00:00:00') {
+    $closingDate = DateTime::createFromFormat('Y-m-d H:i:s', $course_details['closing_date']);
+    
+    if ($closingDate !== false) {
+        // If closing_date can be parsed as a DateTime object
+?>
 <section class="course-content-area">
     <div class="container">
         <div class="row">
@@ -170,7 +176,9 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
         </div>
     </div>
 </section>
+
 <?php endif; ?>
+
 <?php if ($course_details['course_percentage'] !== null && is_numeric($course_details['course_percentage'])): ?>
 <section class="course-content-area">
     <div class="container">
