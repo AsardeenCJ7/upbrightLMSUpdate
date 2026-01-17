@@ -154,7 +154,7 @@ if (!empty($course_details['closing_date']) && $course_details['closing_date'] !
                     <?php echo $course_details['select_month']; ?> Batch <?php echo $course_details['select_year']; ?>
                 </h3><br>
                 <hr>
-                <div class="buttons">
+                <div class="buttons" id="countdown-timer">
                     <button class="neumorphic active" disabled>
                         <span>Days</span>
                         <span id="days"></span>
@@ -176,14 +176,8 @@ if (!empty($course_details['closing_date']) && $course_details['closing_date'] !
         </div>
     </div>
 </section>
-<?php
-        // End of the valid date check
-    }
-}
-?>
 
-
-
+<?php endif; ?>
 
 <?php if ($course_details['course_percentage'] !== null && is_numeric($course_details['course_percentage'])): ?>
 <section class="course-content-area">
